@@ -6,7 +6,6 @@
 
 # variaveis
 user="aluno"
-senha="Senai@127"
 
 shopt -s -o nounset
 
@@ -59,8 +58,8 @@ fi
 
 #criando o usuario
 
-adduser $user
-echo -e "$senha\n$senha" | passwd $user
+adduser $user - q
+passwd $user
 usermod -aG sudo $user
 sleep 2
 
@@ -68,7 +67,6 @@ echo " programa finalizado"
 echo " exibindo informaçoes"
 sleep 2
 echo " usuario: $user"
-echo " senha: $senha"
 sleep 1
 
 rm $0
